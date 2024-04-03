@@ -1,4 +1,4 @@
-function setWeatherInfo(weatherInfo) {
+function displayWeatherInfo(weatherInfo) {
     const weatherInfoDiv = document.getElementById('weather-info')
 
     weatherInfoDiv.innerHTML = `
@@ -14,6 +14,6 @@ const cityInput = document.getElementById('city-input')
 const getWeatherButton = document.getElementById('get-weather-btn')
 
 getWeatherButton.addEventListener('click', () => {
-    const data = getWeatherSync(cityInput.value)
-    setWeatherInfo(data)
+    getWeatherAsync(cityInput.value).then((data) => {displayWeatherInfo(data)})
 })
+
