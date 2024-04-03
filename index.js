@@ -14,6 +14,5 @@ const cityInput = document.getElementById('city-input')
 const getWeatherButton = document.getElementById('get-weather-btn')
 
 getWeatherButton.addEventListener('click', () => {
-    const data = getWeatherSync(cityInput.value)
-    setWeatherInfo(data)
+    getWeatherAsync(cityInput.value).then((data) => {setWeatherInfo(data)})
 })
